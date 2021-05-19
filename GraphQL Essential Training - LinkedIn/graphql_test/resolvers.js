@@ -7,7 +7,7 @@ class Friend{
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.igenderd = gender;
+        this.gender = gender;
         this.email = email;
 
     }
