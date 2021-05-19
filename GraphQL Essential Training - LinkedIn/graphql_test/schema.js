@@ -6,7 +6,15 @@ const schema = buildSchema(`
         firstName: String
         lastName: String
         gender: String
+        age: Int,
         email: String
+    }
+
+    type Stock{
+        id: ID
+        price: Float
+        closingPrice: Float
+        name: String
     }
 
     type Query{
@@ -18,6 +26,7 @@ const schema = buildSchema(`
         firstName: String
         lastName: String
         gender: String
+        age: Int
         email: String
     }
 
