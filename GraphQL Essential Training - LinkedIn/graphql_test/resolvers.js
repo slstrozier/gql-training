@@ -3,13 +3,13 @@ import { resolve } from 'path';
 const friendDatabase = {};
 
 class Friend{
-    constructor(id, {firstName, lastName, gender, email}) {
+    constructor(id, {firstName, lastName, gender, email, contacts}) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.gender = gender;
         this.email = email;
-
+        this.contacts = contacts;
     }
 }
 
