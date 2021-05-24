@@ -1,4 +1,7 @@
 import mongoose from 'mongoose';
+import Sequalize from 'sequelize';
+import _ from 'lodash';
+import casual from 'casual';
 
 //mongo connection
 
@@ -34,4 +37,17 @@ const friendSchema = new mongoose.Schema({
 
 const Friends = mongoose.model('friends', friendSchema);
 
-export { Friends }
+// SQL
+const sequelize = new Sequalize('database', null, null, {
+    dialect: 'sqlite',
+    storage: './alien.sqlite',
+
+})
+
+const Aliens = sequelize.define('aleans', {
+    firstName: { type: Sequalize.STRING },
+    lastName: { type: Sequalize.STRING },
+    planet: { type: Sequalize.STRING }
+})
+
+export { Friends, Aliens }
