@@ -32,7 +32,7 @@ export const resolvers = {
             return new Promise ((resolve, object) => {
                 Friends.findOneAndUpdate({ _id: input.id }, input, { new: true }, (error, friend) => {
                     if (err) reject(err)
-                    else resolve(friend)
+                    else resolve(friend) 
                 })
             })
         }
