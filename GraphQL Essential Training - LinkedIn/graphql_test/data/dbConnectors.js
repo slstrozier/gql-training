@@ -1,5 +1,5 @@
-import mongoose from 'mongoose';
-import Sequalize from 'sequelize';
+import mongoose, { mongo } from 'mongoose';
+import Sequelize from 'sequelize';
 import _ from 'lodash';
 import casual from 'casual';
 
@@ -18,7 +18,7 @@ const friendSchema = new mongoose.Schema({
     lastName: {
         type: String
     },
-    Gender: {
+    gender: {
         type: String
     },
     age: {
@@ -38,16 +38,16 @@ const friendSchema = new mongoose.Schema({
 const Friends = mongoose.model('friends', friendSchema);
 
 // SQL
-const sequelize = new Sequalize('database', null, null, {
+const sequelize = new Sequelize('database', null, null, {
     dialect: 'sqlite',
     storage: './alien.sqlite',
+});
 
-})
+const Aliens = sequelize.define('aliens', {
+    firstName: { type: Sequelize.STRING },
+    lastName: { type: Sequelize.STRING },
+    planetName: { type: Sequelize.STRING },
+});
 
-const Aliens = sequelize.define('aleans', {
-    firstName: { type: Sequalize.STRING },
-    lastName: { type: Sequalize.STRING },
-    planet: { type: Sequalize.STRING }
-})
 
-export { Friends, Aliens }
+export { Friends, Aliens };
